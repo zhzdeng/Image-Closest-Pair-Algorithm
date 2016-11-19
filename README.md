@@ -5,7 +5,8 @@ A random algorithm to find the cloest pair in a set of Image (handwritten digits
 + This link to **download**: [Dataset](http://yann.lecun.com/exdb/mnist/)
 
 ### Usage
-+ Extract all **images** from the dataset
++ Extract all **images** from the dataset<br>
+
 > `make helper`<br>
 > `./bin/datasetHelper`<br>
 > Images will store in `data/images/*.txt`
