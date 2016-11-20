@@ -29,14 +29,17 @@ int main() {
         dataset.read((char*)&number, sizeof(uint32_t));
         n = be32toh(number);
         cout << "There are " << n << " images." << endl; // the number of images
+        // There are 60000 images.
 
         dataset.read((char*)&number, sizeof(uint32_t));
         height = be32toh(number);
         cout << "Height is " << height << " pixels." << endl;
+        // Height is 28 pixels.
 
         dataset.read((char*)&number, sizeof(uint32_t));
         width = be32toh(number);
         cout << "Width is " << width << " pixels." << endl;
+        // Width is 28 pixels.
 
         for (int w = 1; w <= n; w++) {
             stringstream ss;
@@ -57,14 +60,14 @@ int main() {
                         t = t << 1;
                     }
                     if (ans == 1) {
-                        cout << "#";
+                        // cout << "#";
                         output << 1;
                     } else {
-                        cout << " ";
+                        // cout << " ";
                         output << 0;
                     }
                 }
-                cout << endl;
+                // cout << endl;
                 output << "\n";
             }
             output.close();
