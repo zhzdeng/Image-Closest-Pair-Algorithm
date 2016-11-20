@@ -1,4 +1,3 @@
-#include <endian.h>
 #include <algorithm>
 #include <cstdio>
 #include <fstream>
@@ -8,6 +7,15 @@
 using namespace std;
 const string DATASET_PATH = "data/train-images.idx3-ubyte";
 const string OUTPUT_PATH = "data/images/";
+
+// mac ox 自己实现 be32toh
+// be32toh convert from big-endian order to host byte order.
+// 大端转小端
+int be32toh(uint32_t x) {
+    int result;
+    result = (((x)&0xff)<<24) + (((x>>8)&0xff)<<16) + (((x>>16)&0xff)<<8) + (((x>>24)&0xff));
+    return result;
+}
 
 int main() {
     uint32_t number;
